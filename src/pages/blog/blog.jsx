@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-const blog = () => {
+const Blog = () => {
     return (
         <div>
           <h1>This ids blog page</h1>  
@@ -9,4 +9,4 @@ const blog = () => {
     );
 };
 
-export default blog;
+export default Blog;
