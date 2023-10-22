@@ -2,13 +2,17 @@
 import React, { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
-  const {user, loginUser, googleLogIn, githubLogIn} = useContext(AuthContext)
-  const [success, setSuccess] = useState('')
-  const [error, setError] = useState('')
+  const {user, loginUser, googleLogIn, githubLogIn} = useContext(AuthContext);
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) =>{
     event.preventDefault();
@@ -22,6 +26,7 @@ const Login = () => {
     .then(result =>{
       const loginUser = result.user;
       console.log(loginUser);
+      navigate(from, { replace: true });
       form.reset()
     })
     .catch(error => console.log(error.message))

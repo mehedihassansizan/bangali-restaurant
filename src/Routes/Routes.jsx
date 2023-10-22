@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/register/Register";
 import Chef_Recipes from "../pages/chef_recipes/Chef_Recipes";
 import Page404 from "../pages/404page/Page404";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/chef_recipes/:id',
-        element: <Chef_Recipes></Chef_Recipes>,
+        element: <PrivateRoutes><Chef_Recipes></Chef_Recipes></PrivateRoutes>,
         loader: ({params}) => fetch(`https://bangali-restaurant-server-kdfvx8j9l.vercel.app/chefDetails/${params.id}`)
       },
       {

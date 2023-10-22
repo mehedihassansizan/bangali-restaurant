@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { FcLike } from "react-icons/fc";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 
 const ChefDetail = ({ chefDetail }) => {
@@ -17,7 +18,9 @@ const ChefDetail = ({ chefDetail }) => {
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
+        <LazyLoad threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
         <img src={chef_picture} alt="Shoes" />
+        </LazyLoad>
       </figure>
       <div className="card-body">
         <h2 className="card-title">{chef_name}</h2>
