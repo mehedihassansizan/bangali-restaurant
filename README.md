@@ -6,7 +6,7 @@ A brief description of what this project does and who it's for
 
 ## Live Site Link
 
-http://localhost:5173/chef_recipes/2
+https://bangali-restaurant-8846c.web.app/
 
 
 ## Tech Stack
