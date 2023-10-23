@@ -42,6 +42,7 @@ const Login = () => {
       .then((result) => {
         const googleUser = result.user;
         setSuccess(true)
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(true);
@@ -55,6 +56,7 @@ const Login = () => {
       .then((result) => {
         const githubUser = result.user;
         setSuccess(true)
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(true);
